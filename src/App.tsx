@@ -8,10 +8,7 @@ function App() {
   return (
 
     <StrictMode>
-
       <TransactionPage />
-
-
     </StrictMode>
 
   )
