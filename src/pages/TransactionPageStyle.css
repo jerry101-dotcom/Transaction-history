@@ -43,13 +43,28 @@
     margin-top: 10px;
 }
 
-.recieved-font{
+.font{
     color: var(--green-color);
     font-weight: bold;
     width: 40px;
     aspect-ratio: 1/1;
 }
 
+.recieved-font{
+    color: var(--green-color)
+}
+
+.failed-font{
+    color: red;
+}
+
+.pending-font{
+    color: orange;
+}
+
+.transfer-font{
+    color: blue;
+}
 .transaction-amount{
     line-height: 5px;
 }
@@ -59,6 +74,18 @@
     font-size: 0.7em;
     margin-top: 15px;
     color: rgb(21, 207, 21);
+}
+
+.transaction-amount .succesful{
+    color: rgb(21, 207, 21);
+}
+
+.transaction-amount .failed{
+    color: rgb(255, 0, 0);
+}
+
+.transaction-amount .pending{
+    color:orange;
 }
 
 @media (max-width: 600px) {

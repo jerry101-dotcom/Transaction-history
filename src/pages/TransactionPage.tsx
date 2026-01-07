@@ -1,150 +1,59 @@
 import StatusDropDown from "../components/statusDropDown/StatusDropDown"
-import { FaArrowDown } from "react-icons/fa"
 import "./TransactionPageStyle.css"
-
+import transactionData from "../data/TransactionData"
+import { useState } from "react"
 
 function TransactionPage() {
+  const [transactions] = useState(transactionData)
+  const [statusFilter, setStatusFilter] = useState("All")
+
+  const filteredTransactions =
+    statusFilter === "All"
+      ? transactions
+      : transactions.filter(
+          t => t.transactionStatus === statusFilter
+        )
+
   return (
     <main className="transaction-main">
+      <div>
+        <h3>Transactions</h3>
+        <StatusDropDown
+          selected={statusFilter}
+          onChange={setStatusFilter}
+        />
+      </div>
 
-        <div>
-            <h3>Transactions</h3>
-            <StatusDropDown />
-        </div>
+      <ul className="transaction-page-ul">
+        {filteredTransactions.map((transaction, index) => (
+          <li key={index}>
+            <div className="transaction-info">
+              {transaction.statusFont}
+              <div>
+                <p className="purpose">{transaction.transactionInfo}</p>
+                <p className="date">{transaction.transactionDate}</p>
+              </div>
+            </div>
 
-        <ul className="transaction-page-ul">
-            <li>
-                <div className="transaction-info">
-                  <FaArrowDown className="recieved-font" />
-                  <div>
-                    <p className="purpose">Recieved from ELon Musk and all is whole startups</p>
-                    <p className="date">Jan 6th, 22:14:30</p>
-                  </div>
-                </div>
-
-                <div className="transaction-amount">
-                    <h4>+$25,000,000</h4>
-                    <p>Successful</p>
-                </div>
-                
-            </li>
-
-            <li>
-                <div className="transaction-info">
-                  <FaArrowDown className="recieved-font" />
-                  <div>
-                    <p className="purpose">Recieved from ELon Musk and all is whole startups</p>
-                    <p className="date">Jan 6th, 22:14:30</p>
-                  </div>
-                </div>
-
-                <div className="transaction-amount">
-                    <h4>+$25,000,000</h4>
-                    <p>Successful</p>
-                </div>
-                
-            </li>
-
-            <li>
-                <div className="transaction-info">
-                  <FaArrowDown className="recieved-font" />
-                  <div>
-                    <p className="purpose">Recieved from ELon Musk and all is whole startups</p>
-                    <p className="date">Jan 6th, 22:14:30</p>
-                  </div>
-                </div>
-
-                <div className="transaction-amount">
-                    <h4>+$25,000,000</h4>
-                    <p>Successful</p>
-                </div>
-                
-            </li>
-
-            <li>
-                <div className="transaction-info">
-                  <FaArrowDown className="recieved-font" />
-                  <div>
-                    <p className="purpose">Recieved from ELon Musk and all is whole startups</p>
-                    <p className="date">Jan 6th, 22:14:30</p>
-                  </div>
-                </div>
-
-                <div className="transaction-amount">
-                    <h4>+$250,000</h4>
-                    <p>Successful</p>
-                </div>
-                
-            </li>
-
-            <li>
-                <div className="transaction-info">
-                  <FaArrowDown className="recieved-font" />
-                  <div>
-                    <p className="purpose">Recieved from ELon Musk and all is whole startups</p>
-                    <p className="date">Jan 6th, 22:14:30</p>
-                  </div>
-                </div>
-
-                <div className="transaction-amount">
-                    <h4>+$25,000,000</h4>
-                    <p>Successful</p>
-                </div>
-                
-            </li>
-
-            <li>
-                <div className="transaction-info">
-                  <FaArrowDown className="recieved-font" />
-                  <div>
-                    <p className="purpose">Recieved from ELon Musk and all is whole startups</p>
-                    <p className="date">Jan 6th, 22:14:30</p>
-                  </div>
-                </div>
-
-                <div className="transaction-amount">
-                    <h4>+$25,000,000</h4>
-                    <p>Successful</p>
-                </div>
-                
-            </li>
-
-            <li>
-                <div className="transaction-info">
-                  <FaArrowDown className="recieved-font" />
-                  <div>
-                    <p className="purpose">Recieved from ELon Musk and all is whole startups</p>
-                    <p className="date">Jan 6th, 22:14:30</p>
-                  </div>
-                </div>
-
-                <div className="transaction-amount">
-                    <h4>+$25,000,000</h4>
-                    <p>Successful</p>
-                </div>
-                
-            </li>
-
-            <li>
-                <div className="transaction-info">
-                  <FaArrowDown className="recieved-font" />
-                  <div>
-                    <p className="purpose">Recieved from ELon Musk and all is whole startups</p>
-                    <p className="date">Jan 6th, 22:14:30</p>
-                  </div>
-                </div>
-
-                <div className="transaction-amount">
-                    <h4>+$25,000,000</h4>
-                    <p>Successful</p>
-                </div>
-                
-            </li>
-
-            
-        </ul>
-        
+            <div className="transaction-amount">
+              <h4>{transaction.transactionAmount}</h4>
+              <p
+                className={
+                  transaction.transactionStatus === "Successful"
+                    ? "successful"
+                    : transaction.transactionStatus === "Failed"
+                    ? "failed"
+                    : "pending"
+                }
+              >
+                {transaction.transactionStatus}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ul>
     </main>
   )
 }
+
 export default TransactionPage
