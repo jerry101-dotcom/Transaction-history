@@ -11,8 +11,8 @@ function TransactionPage() {
     statusFilter === "All"
       ? transactions
       : transactions.filter(
-          t => t.transactionStatus === statusFilter
-        )
+        t => t.transactionStatus === statusFilter
+      )
 
   return (
     <main className="transaction-main">
@@ -36,18 +36,19 @@ function TransactionPage() {
             </div>
 
             <div className="transaction-amount">
-              <h4>{transaction.transactionAmount}</h4>
+              <h4>{transaction.transactionInfo.includes("Receieved") ? "+" : transaction.transactionInfo.includes("Transfer") ? "-" : ""}{transaction.transactionAmount}</h4>
               <p
                 className={
                   transaction.transactionStatus === "Successful"
                     ? "successful"
                     : transaction.transactionStatus === "Failed"
-                    ? "failed"
-                    : "pending"
+                      ? "failed"
+                      : "pending"
                 }
               >
                 {transaction.transactionStatus}
               </p>
+              <p className="transaction-id">id: {transaction.id}</p>
             </div>
           </li>
         ))}

@@ -67,17 +67,22 @@
 }
 .transaction-amount{
     line-height: 5px;
+    text-align: right;
+}
+
+.transaction-id{
+    font-size: 0.7em;
+    color: rgb(124, 124, 124);
 }
 
 .transaction-amount p{
     text-align: right;
     font-size: 0.7em;
-    margin-top: 15px;
-    color: rgb(21, 207, 21);
+    margin-top: 15px;   
 }
 
-.transaction-amount .succesful{
-    color: rgb(21, 207, 21);
+.transaction-amount .successful{
+    color: rgb(0, 255, 0);
 }
 
 .transaction-amount .failed{
