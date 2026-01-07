@@ -71,7 +71,7 @@ function TransactionPage() {
                 </div>
 
                 <div className="transaction-amount">
-                    <h4>+$25,000,000</h4>
+                    <h4>+$250,000</h4>
                     <p>Successful</p>
                 </div>
                 

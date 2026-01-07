@@ -1,33 +1,36 @@
 .transaction-main{
     max-width: 1200px;
     padding: 0.2em;
-    border: 2px solid var(--gray-color);
+    
     margin: 0.5em;
 }
 
 .transaction-page-ul{
     list-style-type: none;
     padding: 0;
-    border: 1px solid var(--white-color);
+    display: flex;
+    flex-direction: column;
+    gap:20px;
 }
 
 .transaction-page-ul li{
     display: flex;
     justify-content: space-between;
-    padding: 1em;
+    padding: 2em;
     gap: 50px;
     align-items: center;
+    border-top:2px solid rgb(33, 33, 33);
+    border-bottom: 2px solid rgb(33, 33, 33);
 }
 
 .transaction-info{
-    border: 1px solid var(--white-color);
     display: flex;
     align-items: center;
+    gap: 15px;
 }
     
 .transaction-info div{
     line-height: 5px;
-    padding: 1em;
     text-align: left;
 }
 
@@ -37,7 +40,7 @@
 .transaction-info .date{
     font-size: 0.7em;
     color: rgb(124, 124, 124);
-    margin-top: -5px;
+    margin-top: 10px;
 }
 
 .recieved-font{
@@ -54,6 +57,7 @@
 .transaction-amount p{
     text-align: right;
     font-size: 0.7em;
+    margin-top: 15px;
     color: rgb(21, 207, 21);
 }
 
@@ -69,10 +73,16 @@
     }
 
     .transaction-amount h4{
-        font-size: 0.6em;
+        font-size: 0.8em;
     }
 
     .transaction-amount p{
         font-size: 0.55em;
+    }
+}
+
+@media (min-width: 1300px) {
+    .transaction-main{
+        width: 1200px;
     }
 }

@@ -6,11 +6,14 @@ function App() {
 
 
   return (
-    <>
-      <StrictMode>
-        <TransactionPage />
-      </StrictMode>
-    </>
+
+    <StrictMode>
+
+      <TransactionPage />
+
+
+    </StrictMode>
+
   )
 }
 
