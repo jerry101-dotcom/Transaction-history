@@ -14,28 +14,28 @@ const transactionData :{
       statusFont : <FaArrowUp className="transfer-font font" />,
       transactionInfo : "Transfer to Lucky Deborah",
       transactionDate : new Date().toLocaleString(),
-      transactionAmount : `$ ${7000}`,
+      transactionAmount : `$${7000}`,
       transactionStatus : "Successful"
     },
     {
         statusFont : <FaArrowDown className="recieved-font font" />,
         transactionInfo : "Receieved from Nvidia Corporation",
         transactionDate : new Date().toLocaleString(),
-        transactionAmount : `$ ${50000}`,
+        transactionAmount : `$${50000}`,
         transactionStatus : "Successful"
       },
       {
         statusFont : <FaMinus className="pending-font font" />,
         transactionInfo : "MTN Airtime Purchase",
         transactionDate : new Date().toLocaleString(),
-        transactionAmount : `$ ${5000}`,
+        transactionAmount : `$${5000}`,
         transactionStatus : "Pending"
       },
       {
         statusFont : <FaArrowDown className="recieved-font font" />,
         transactionInfo : "Receieved from Cowrywise Investment",
         transactionDate : new Date().toLocaleString(),
-        transactionAmount : `$ ${10000}`,
+        transactionAmount : `$${10000}`,
         transactionStatus : "Successful"
       },
       {
@@ -49,21 +49,21 @@ const transactionData :{
         statusFont : <FaArrowUp className="transfer-font font" />,
         transactionInfo : "Transfer to Fedearal Government of Nigeria",
         transactionDate : new Date().toLocaleString(),
-        transactionAmount : `$ ${10000}`,
+        transactionAmount : `$${10000}`,
         transactionStatus : "Successful"
       },
       {
         statusFont : <FaMinus className="pending-font font" />,
         transactionInfo : "Transfer to Kiesha Tsotskey",
         transactionDate : new Date().toLocaleString(),
-        transactionAmount : `$ ${1500}`,
+        transactionAmount : `$${1500}`,
         transactionStatus : "Pending"
       },
       {
         statusFont : <FiX className="failed-font font" />,
         transactionInfo : "Airtel Data Subscription",
         transactionDate : new Date().toLocaleString(),
-        transactionAmount : `$ ${2000}`,
+        transactionAmount : `$${2000}`,
         transactionStatus : "Failed"
       },
 ]

@@ -101,6 +101,8 @@
 
     .transaction-amount h4{
         font-size: 0.8em;
+        width: 50px;
+        text-align: right;
     }
 
     .transaction-amount p{
